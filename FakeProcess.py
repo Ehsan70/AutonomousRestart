@@ -8,10 +8,17 @@ import sys
 from threading import Timer
 
 def main ():
-    print ("Setting up a fake process")
-    set_proc_name("FakProcess")
-    print(get_script_dir())
-    get_path()
+    print ("For testing purposes: Setting up a fake process")
+    # Sets the process name to kvStore
+    set_proc_name("kvStore")
+    # Getting the directory of the script
+    dir = get_script_dir()
+    print(dir)
+    #set the environment variable to script directory
+    set_env_variable(value=dir)
+
+    print "env var is "+ str(get_env_variable())
+    print (os.environ['PATH'])
     try:
         while True:
             # for every 5 second schedule the func() to be run in the next 5 sec.
@@ -25,7 +32,7 @@ def func ():
     print ("Time : "+str(time.time()))
 
 """
-Changes the name of the process to the one given to the function.
+Changes the name of the process to the one given to the function. This helps to identify the process.
 Note that if the name is not set, the default name would be Python. This is a problem because there could be
     more than one process with python name
 """
@@ -36,10 +43,18 @@ def set_proc_name(new_name):
     buff.value = new_name
     libc.prctl(15, byref(buff), 0, 0, 0)
 
+
+
+"""
+gets the current directory of your python code.
+"""
 def get_path():
     #source: http://stackoverflow.com/questions/3718657/how-to-properly-determine-current-script-directory-in-python
     print os.path.dirname(os.path.abspath(__file__))
 
+"""
+gets the current directory of your python code.
+"""
 def get_script_dir(follow_symlinks=True):
     #source: http://stackoverflow.com/questions/3718657/how-to-properly-determine-current-script-directory-in-python
     if getattr(sys, 'frozen', False): # py2exe, PyInstaller, cx_Freeze
@@ -50,12 +65,21 @@ def get_script_dir(follow_symlinks=True):
         path = os.path.realpath(path)
     return os.path.dirname(path)
 
+"""
+Sets the environment variable of the target node.
+The environment variable 'kvStoreDir' will hold the directory where the our python code exists
+"""
 def set_env_variable(value):
     #source: http://stackoverflow.com/questions/5971312/how-to-set-environment-variables-in-python
-    os.environ["kvStoreDir"] = value
-
+    #os.putenv('kvStoreDir', 'Ehsan')
+    os.environ['kvStoreDir']='Ehsan'
+"""
+Gets the environment variable of the target node.
+The environment variable 'kvStoreDir' will hold the directory where the our python code exists
+"""
 def get_env_variable():
-    v = os.environ["kvStoreDir"]
+    #v = os.getenv('kvStoreDir')
+    v = os.environ['kvStoreDir']
     return v
 
 

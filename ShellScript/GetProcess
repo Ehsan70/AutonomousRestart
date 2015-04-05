@@ -1,11 +1,14 @@
 #!/bin/bash
 
+#this holds where the python script is stored
+DIR="PL/Cogs/all/kvstore"
+
 # checking if the first argument contains process name
 if [ ! -z  "$1" ]; then 
 	PNAME=$1
 	echo "The process name is set to  $PNAME"
 else 
-	PNAME="FakProcess"
+	PNAME="kvStore"
 	echo "The defualt process name '$PNAME' will be used."
 fi
 
@@ -17,18 +20,19 @@ fi
 echo "Checking if process $PNAME is alive..."
 
 PID=`pgrep $PNAME`
-echo $PID
 
 if [ ! -z  "$PID" ]; then 
 	echo "The pid for specified process $PNAME is $PID  "
 	#do nothing
 else 
 	echo "There is no alive process with the name $PNAME."
-	# figure out where the code is placed 
+	# figure out where the code is placed -> this is not needed anymore
+	# python  #DIR
 	# run it 
 fi
 
 echo "press Enter to exit."
 read
+
 
 
