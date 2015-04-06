@@ -56,8 +56,8 @@ main (){
 
 	fi
 
-	echo "[BASH] Press Enter to exit shell."
-	read
+	#echo "[BASH] Press Enter to exit shell."
+	#read
 }
 
 
