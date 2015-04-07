@@ -6,8 +6,12 @@ PH_DIR=`readlink -f ./ProcessHandle.sh`
 # This will run every 2 mins
 CRON_CMD="*/2 * * * * $PH_DIR >> /DHTlog.txt 2>&1"
 
+#set the environment variable prior to the cron job running.
+#source: http://unix.stackexchange.com/questions/94456/how-to-change-cron-shell-sh-to-bash 
+echo "SHELL=/bin/bash" > CronJobs.txt
+
 # Add the command to a cron file 
-echo "$CRON_CMD" > CronJobs.txt
+echo "$CRON_CMD" >> CronJobs.txt
 
 # Load the CronJobs.txt file into the crontab
 sudo crontab CronJobs.txt

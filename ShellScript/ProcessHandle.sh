@@ -2,7 +2,7 @@
 # This script is ran by the cronjob
 
 # This holds where the python script is stored
-DIR="PL/Cogs/all/kvstore/app.py"
+DIR="PL/Cogs/all/kvstore/App.py"
 # I used this just to test 
 #DIR_TEST=`readlink -f ../FakeProcess.py`
 DIR_TEST="/home/user/Documents/PyCharm/ProcessChecker/FakeProcess.py"
@@ -21,5 +21,5 @@ if [ ! -z  "$PID" ]; then
 	#do nothing
 else 
 	echo "[BASH] There is no alive process with the name $PNAME."
-	python $DIR_TEST
+	python $DIR
 fi
