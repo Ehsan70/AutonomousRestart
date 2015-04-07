@@ -18,6 +18,8 @@ PNAME="python"
 # ID of the process with the above name 
 PID=`pgrep $PNAME`
 
+# This file is different for each node set
+FILE_DIR=/home/ubc_eece411_3/PL/Cogs/all/kvstore/3nodeset2hosts.txt
 
 echo "[BASH] Script is running"
 
@@ -26,5 +28,5 @@ if [ ! -z  "$PID" ]; then
 	#do nothing
 else 
 	echo "[BASH] There is no alive process with the name $PNAME."
-	python $DIR
+	python $DIR $FILE_DIR
 fi
