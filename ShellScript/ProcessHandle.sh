@@ -11,15 +11,20 @@ DIR=/home/ubc_eece411_3/PL/Cogs/all/kvstore/App.py
 # I used this just to test 
 #DIR_TEST=`readlink -f ../FakeProcess.py`
 DIR_TEST="/home/user/Documents/PyCharm/ProcessChecker/FakeProcess.py"
+
 # This is the name of process which we will have an eye on.
 #PNAME="kvStore"
 PNAME="python"
 
 # ID of the process with the above name 
 PID=`pgrep $PNAME`
+ 
+
+# The output of 'cat $file' is assigned to the $name variable
+HOST_FILE=$(cat "/home/ubc_eece411_3/cronjob/hostfile.txt")  
 
 # This file is different for each node set
-FILE_DIR=/home/ubc_eece411_3/PL/Cogs/all/kvstore/3nodeset2hosts.txt
+FILE_DIR=/home/ubc_eece411_3/PL/Cogs/all/kvstore/$HOST_FILE
 
 echo "[BASH] Script is running"
 
