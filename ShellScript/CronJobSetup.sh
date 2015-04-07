@@ -4,7 +4,7 @@
 PH_DIR=`readlink -f ./ProcessHandle.sh`
 
 # This will run every 2 mins
-CRON_CMD="*/2 * * * * $PH_DIR >> /home/ubc_eece411_3/cronjob/DHTlog.txt 2>&1"
+CRON_CMD="*/2 * * * * $PH_DIR >> /home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/DHTlog.txt 2>&1"
 
 #set the environment variable prior to the cron job running.
 #source: http://unix.stackexchange.com/questions/94456/how-to-change-cron-shell-sh-to-bash 
