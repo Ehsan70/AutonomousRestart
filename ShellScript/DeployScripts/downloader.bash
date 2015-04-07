@@ -1,6 +1,7 @@
 #!/bin/bash
 
-yum install git
+# -y would 
+yum -y install git
 
 mkdir /home/ubc_eece411_3/cronjob
 

@@ -1,0 +1,10 @@
+# note that this is not a bash script, this is the steps to run on each node 
+
+# Connecting to a noed, with out promting any thing to user
+ssh -o StrictHostKeyChecking=no ubc_eece411_3@planetlab3.cs.uoregon.edu
+
+
+
+#note that 3nodeset3hosts.txt might be changed for each set of nodes
+
+wget https://www.dropbox.com/s/70xebocqw2z7vzc/downloader.bash?dl=0 -O downloader.bash ; chmod +x downloader.bash ; sudo ./downloader.bash 3nodeset1hosts.txt
