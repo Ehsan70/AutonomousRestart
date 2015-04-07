@@ -12,6 +12,6 @@ git clone git://github.com/Ehsan70/AutonomousRestart.git
 
 cd /home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/
 
-echo $1 > /home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/DeployScripts/hostfile.txt
+echo $1 > /home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/hostfile.txt
 
 /home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/CronJobSetup.sh
