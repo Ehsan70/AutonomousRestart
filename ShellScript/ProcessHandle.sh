@@ -21,7 +21,7 @@ PID=`pgrep $PNAME`
  
 
 # The output of 'cat $file' is assigned to the $name variable
-HOST_FILE=$(cat "/home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/hostfile.txt")  
+HOST_FILE=$(cat "/home/ubc_eece411_3/cronjob/AutonomousRestart/ShellScript/DeployScripts/hostfile.txt")  
 
 # This file is different for each node set
 FILE_DIR=/home/ubc_eece411_3/PL/Cogs/all/kvstore/$HOST_FILE
