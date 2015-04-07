@@ -1,8 +1,13 @@
 #!/bin/bash
 # This script is ran by the cronjob
 
+#getting the user home directory
+HOME_DIR=$( getent passwd "$USER" | cut -d: -f6 )
+# HOME_DIR=`eval echo ~$USER`
+
 # This holds where the python script is stored
-DIR="~/PL/Cogs/all/kvstore/App.py"
+DIR=/home/ubc_eece411_3/PL/Cogs/all/kvstore/App.py
+
 # I used this just to test 
 #DIR_TEST=`readlink -f ../FakeProcess.py`
 DIR_TEST="/home/user/Documents/PyCharm/ProcessChecker/FakeProcess.py"
